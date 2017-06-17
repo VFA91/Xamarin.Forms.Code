@@ -15,8 +15,8 @@ namespace AppTest
             Resources = resources;
 
             //MainPage = new NavigationPage(new EditRecipePage());
-            //MainPage = new NavigationPage(new RecipeListPage());
-            MainPage = new NavigationPage(new RecipeDetailPage());
+            MainPage = new NavigationPage(new RecipeListPage());
+            //MainPage = new NavigationPage(new RecipeDetailPage());
         }
     }
 }

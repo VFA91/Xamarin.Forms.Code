@@ -6,10 +6,10 @@ namespace AppTest.Views
 {
     public class RecipeDetailPage : ContentPage
     {
-        public RecipeDetailPage()
+        public RecipeDetailPage(Recipe selectedRecipe)
         {
+            BindingContext = selectedRecipe;
             Title = "Details";
-            BindingContext = RecipeData.SingleRecipe;
             Content = new StackLayout()
             {
                 Children = {
@@ -24,6 +24,12 @@ namespace AppTest.Views
                     }
                 }
             };
+            ToolbarItems.Add(new ToolbarItem("Edit", null, async () =>
+            {
+                var editPage = new NavigationPage(new EditRecipePage(selectedRecipe));
+
+                await Navigation.PushModalAsync(editPage);
+            }));
         }
 
         private View GetContentPage()

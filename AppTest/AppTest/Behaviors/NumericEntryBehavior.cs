@@ -15,7 +15,8 @@ namespace AppTest.Behaviors
             if (string.IsNullOrEmpty(e.NewTextValue))
                 return;
 
-            if (!double.TryParse(e.NewTextValue, out double result))
+            double result;
+            if (!double.TryParse(e.NewTextValue, out result))
                 ((Entry)sender).Text = e.OldTextValue;
         }
 
